@@ -13,7 +13,7 @@
 #include <utility>  //std::swap()
 
 template <class T>
-int partition(std::vector<T>& array, const int& low, const int& high) {
+int partition_(std::vector<T>& array, const int& low, const int& high) {
     // Pivot point will always be the last element of array/sub-array
     T pivot = array[high];
 
@@ -41,7 +41,7 @@ std::vector<T> QuickSort_(std::vector<T>& array, const int& low, const int& high
     }
 
     // Partitions the array and returns the partition index
-    int part = partition(array, low, high);
+    int part = partition_(array, low, high);
 
     QuickSort_(array, low, part-1);
     QuickSort_(array, part+1, high);
